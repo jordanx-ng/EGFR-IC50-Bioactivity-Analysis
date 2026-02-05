@@ -1,80 +1,75 @@
-# EGFR Dose–Response and Bioactivity Analysis
+EGFR IC50 Bioactivity Analysis (Drug Discovery Mini-Project)
+Overview
 
-![EGFR IC50 Histogram](plots/EGFR_IC50_hist_positive.png)
+This project analyzes bioactivity data for compounds tested against the Epidermal Growth Factor Receptor (EGFR) using publicly available ChEMBL data. EGFR is a clinically important target in oncology, and IC50 measurements are commonly used to assess compound potency in early-stage drug discovery.
 
----
+The goal of this project is to demonstrate practical skills in bioactivity data cleaning, analysis, visualization, and pharmacological interpretation using Python.
 
-## Overview
+Dataset
 
-This project analyzes **Epidermal Growth Factor Receptor (EGFR)** bioactivity data from ChEMBL, focusing on IC50 values of small-molecule inhibitors. The analysis identifies the most potent compounds, visualizes their experimental variability, and provides dose–response insights—directly relevant to **anticancer therapeutics** and **drug discovery research**.
+Source: ChEMBL database (public bioactivity data)
 
-The project demonstrates **data cleaning, aggregation, and visualization skills** in Python, emphasizing preparation and analysis of biomedical datasets, which is essential for MSc-level research in **Applied Biomedicine**.
+Target: EGFR (Epidermal Growth Factor Receptor)
 
----
+Bioactivity metric: IC50 values (nM)
 
-## Dataset
+Dataset includes multiple IC50 measurements per compound from different experimental assays
 
-- **Source:** [ChEMBL Bioactivity Database](https://www.ebi.ac.uk/chembl/)  
-- **Type:** IC50 measurements (nM) for compounds tested against EGFR  
-- **Columns used:**  
-  - `Molecule ChEMBL ID` – unique compound identifier  
-  - `Molecule Name` – optional, if available  
-  - `Value` – IC50 measurement in nM  
+For portfolio and GitHub size constraints, a filtered subset of the dataset is used.
 
-> Only numeric and positive IC50 values were considered to ensure meaningful bioactivity analysis.
+Methods
 
----
+Loaded and inspected raw ChEMBL bioactivity data using pandas
 
-## Skills Demonstrated
+Cleaned IC50 values by:
 
-- **Data handling:** Cleaning, converting, and validating bioactivity data using **pandas**  
-- **Statistical analysis:** Computing mean IC50 per compound, counting measurements, summarizing experimental variability  
-- **Data visualization:** Plotting IC50 distribution and dose–response trends with **matplotlib**, including logarithmic scales for pharmacologically relevant insights  
-- **Biological interpretation:** Identifying most potent compounds and potential drug candidates based on IC50 trends  
+Removing missing and non-numeric entries
 
----
+Excluding negative IC50 values (biologically implausible)
 
-## Analysis Steps
+Computed mean IC50 per compound to account for repeated experimental measurements
 
-1. **Load and inspect dataset** – Read CSV and preview columns.  
-2. **Clean IC50 values** – Remove missing or non-numeric entries.  
-3. **Compute mean IC50 per compound** – Aggregate experimental measurements to get overall potency.  
-4. **Count measurements per compound** – Assess reliability of results.  
-5. **IC50 distribution histogram** – Visualize the spread of compound potencies.  
-6. **Top 5 compounds trend plot** – Highlight the most potent candidates and their experimental variability.  
-7. **Save cleaned dataset** – Output for further downstream analysis.
+Visualized:
 
----
+Overall IC50 distribution using a histogram
 
-## Key Insights
+IC50 trends for the most potent compounds
 
-- The **most potent EGFR inhibitors** (mean IC50 in nM) identified in this dataset:
+Saved cleaned datasets and plots for reproducibility
 
-| Compound ID      | Mean IC50 (nM) |
-|-----------------|----------------|
-| CHEMBL574059     | 0.38           |
-| CHEMBL574058     | 0.39           |
-| CHEMBL304271     | 450            |
-| CHEMBL5094480    | 900            |
-| CHEMBL5087815    | 920            |
+Key Findings & Interpretation
 
-- The IC50 histogram illustrates that most compounds fall within the low nanomolar range, indicating strong inhibitory potential.  
-- Top 5 trend plots reveal experimental variability, highlighting compounds with consistent high potency—valuable for drug candidate prioritization.
+Compounds with lower IC50 values exhibit higher inhibitory potency against EGFR
 
----
+Several compounds display sub-micromolar to nanomolar IC50 values, indicating strong activity
 
-## Plots
+Aggregating multiple IC50 measurements per compound improves confidence in potency comparisons
 
-1. **EGFR IC50 Histogram** – Distribution of compound potencies:  
-   `plots/EGFR_IC50_hist_positive.png`  
+These analyses reflect standard workflows used in early-stage anticancer drug discovery.
 
-2. **Top 5 Compounds IC50 Trend (log scale)** – Dose–response visualization:  
-   `plots/top5_ic50_trend_positive.png`  
+Relevance to Drug Discovery & MSc Training
 
-> Plots saved as **300 dpi** for professional, portfolio-ready presentation.
+This project demonstrates:
 
----
+Practical handling of real-world bioactivity datasets
 
+Understanding of pharmacological potency metrics (IC50)
+
+Data-driven reasoning applied to therapeutic target evaluation
+
+These skills are directly relevant to Applied Biomedicine, Drug Discovery, Pharmacology, and Translational Research modules at the MSc level.
+
+Tools & Skills
+
+Python
+
+pandas
+
+matplotlib
+
+Bioactivity data analysis
+
+Drug discovery fundamentals
 ## How to Run
 
 ```bash
