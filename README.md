@@ -1,76 +1,87 @@
-EGFR IC50 Bioactivity Analysis (Drug Discovery Mini-Project)
-Overview
+## EGFR IC50 Bioactivity Analysis
 
-This project analyzes bioactivity data for compounds tested against the Epidermal Growth Factor Receptor (EGFR) using publicly available ChEMBL data. EGFR is a clinically important target in oncology, and IC50 measurements are commonly used to assess compound potency in early-stage drug discovery.
+A Drug Discovery Mini-Project
 
-The goal of this project is to demonstrate practical skills in bioactivity data cleaning, analysis, visualization, and pharmacological interpretation using Python.
+## Overview
 
-Dataset
+This project analyzes bioactivity data for compounds tested against the Epidermal Growth Factor Receptor (EGFR) using publicly available data from the ChEMBL database. EGFR is a clinically important target in oncology, and IC50 values are commonly used to quantify compound potency in early-stage drug discovery.
 
-Source: ChEMBL database (public bioactivity data)
+The objective of this project is to demonstrate practical skills in bioactivity data cleaning, analysis, visualization, and pharmacological interpretation using Python.
 
-Target: EGFR (Epidermal Growth Factor Receptor)
+## Dataset
 
-Bioactivity metric: IC50 values (nM)
+- Source: ChEMBL (public bioactivity database)
 
-Dataset includes multiple IC50 measurements per compound from different experimental assays
+- Target: Epidermal Growth Factor Receptor (EGFR)
 
-For portfolio and GitHub size constraints, a filtered subset of the dataset is used.
+- Bioactivity Metric: IC50 (nM)
 
-Methods
+- Description:
+The dataset contains IC50 measurements for multiple compounds tested against EGFR. Some compounds have multiple measurements from different experimental assays.
 
-Loaded and inspected raw ChEMBL bioactivity data using pandas
+A filtered subset of the dataset is used for this project to ensure reproducibility and comply with GitHub file size limits.
 
-Cleaned IC50 values by:
+## Methods
 
-Removing missing and non-numeric entries
+ 1. Loaded and inspected raw ChEMBL bioactivity data using pandas
 
-Excluding negative IC50 values (biologically implausible)
+2.  Cleaned IC50 values by:
 
-Computed mean IC50 per compound to account for repeated experimental measurements
+- Removing missing and non-numeric entries
 
-Visualized:
+- Excluding negative IC50 values (biologically implausible)
 
-Overall IC50 distribution using a histogram
+3. Aggregated multiple measurements by computing mean IC50 per compound
 
-IC50 trends for the most potent compounds
+4. Visualized:
 
-Saved cleaned datasets and plots for reproducibility
+- Overall IC50 distribution using a histogram
 
-Key Findings & Interpretation
+- IC50 trends for the most potent compounds
 
-Compounds with lower IC50 values exhibit higher inhibitory potency against EGFR
+5. Saved cleaned datasets and plots for reproducibility
 
-Several compounds display sub-micromolar to nanomolar IC50 values, indicating strong activity
+## Key Findings
 
-Aggregating multiple IC50 measurements per compound improves confidence in potency comparisons
+- Compounds with lower mean IC50 values exhibit higher inhibitory potency against EGFR
 
-These analyses reflect standard workflows used in early-stage anticancer drug discovery.
+- Several compounds display sub-micromolar to nanomolar IC50 values, indicating strong bioactivity
 
-Relevance to Drug Discovery & MSc Training
+- Aggregating IC50 values across multiple assays improves confidence in compound potency assessment
 
-This project demonstrates:
+These steps reflect standard workflows used in early-stage anticancer drug discovery.
 
-Practical handling of real-world bioactivity datasets
+## Relevance to Drug Discovery
 
-Understanding of pharmacological potency metrics (IC50)
+This project demonstrates essential skills used in pharmaceutical and biomedical research, including:
 
-Data-driven reasoning applied to therapeutic target evaluation
+- Handling real-world bioactivity datasets
 
-These skills are directly relevant to Applied Biomedicine, Drug Discovery, Pharmacology, and Translational Research modules at the MSc level.
+- Interpreting pharmacological potency metrics
 
-Tools & Skills
+- Performing data-driven comparisons of candidate compounds
 
-Python
+The workflow and analysis are directly relevant to drug discovery, pharmacology, and applied biomedicine training.
 
-pandas
+## Tools & Skills
 
-matplotlib
+- Python
 
-Bioactivity data analysis
+- pandas
 
-Drug discovery fundamentals
-## How to Run
+- matplotlib
 
-```bash
-python analysis.py
+- Bioactivity data analysis
+
+- Drug discovery fundamentals
+
+## How To Run
+python egfr_ic50_analysis.py
+
+## Future Work
+
+- Compare EGFR bioactivity with other kinase targets
+
+- Extend analysis using log-transformed IC50 (pIC50)
+
+- Integrate SQL-based querying of bioactivity datasets
