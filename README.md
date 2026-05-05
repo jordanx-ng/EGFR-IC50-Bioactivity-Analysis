@@ -1,4 +1,4 @@
-## EGFR IC50 Bioactivity Analysis
+## EGFR Inhibitor Bioactivity Analysis for Drug Discovery (IC50-Based Screening)
 
 A Drug Discovery Mini-Project
 
